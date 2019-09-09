@@ -1,2 +1,54 @@
 @import 'bootstrap/scss/bootstrap.scss';
+@import '_default.scss';
 
+
+html {
+    scroll-behavior: smooth;
+  }
+.photo-list {
+    .row {
+        .col {
+            margin-bottom: 5rem;
+            img {
+                width: 16rem;
+                height: 10rem;
+            }
+        }
+    }
+}
+
+.bottom-navigation {
+    margin: 0 auto;
+    max-width: 32rem;
+    .container {
+        padding-top: 6rem;
+        padding-bottom: 5.2rem;
+    }
+    .col {
+        max-width: 30rem;
+        margin: 0 auto;
+        .bottom-nav-link {
+            p {
+                display: inline-block;
+                padding: 0 1rem;
+                color: #111111;
+                text-decoration: none;
+            }
+            img {
+                width: 3rem;
+            }
+            .col-2 {
+                padding:0;
+            }
+            .col-10 {
+                padding: 0.3rem 0 0 0;
+            }
+            .bottom-nav-left {
+                float: left;
+            }
+            .bottom-nav-right {
+                float: right;
+            }
+        }
+    }
+}
