@@ -16,7 +16,11 @@ html {
         }
     }
 }
-
+.photo-details {
+    ul {
+        list-style: none;
+    }
+}
 .bottom-navigation {
     margin: 0 auto;
     max-width: 32rem;

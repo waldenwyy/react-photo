@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from "react-router-dom";
 
 const PhotoList = props => {
   return(
@@ -11,9 +12,9 @@ const PhotoList = props => {
 
             return(
               <div className="col text-center" key={photo.id}>
-                <a href="/">
+                <NavLink exact to={`/photo/${photo.id}`}>
                   <img src={src.join("/")} alt="item"/>
-                </a>
+                </NavLink>
               </div>
             )
           })
