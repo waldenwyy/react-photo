@@ -4,8 +4,8 @@ const PhotoList = props => {
   return(
     <div className="container">
       <div className="row">
-        { props && props.length > 0 && 
-          props.map(photo => {
+        { props.photo && props.photo.length > 0 && 
+          props.photo.map(photo => {
             return(
               <div className="col" key={photo.id}>
                 <a href="/">

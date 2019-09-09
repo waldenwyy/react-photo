@@ -40,7 +40,7 @@ class ApiCall extends React.Component {
         <ul>
           {items.map(item => (
             <li key={item.id}>
-              <img src={item.download_url} class="" alt="list" style={{width:"160px"}} />>
+              <img src={item.download_url} className="" alt="list" style={{width:"160px"}} />>
                {item.author}
             </li>
           ))}

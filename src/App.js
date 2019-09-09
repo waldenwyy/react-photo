@@ -1,6 +1,5 @@
 import React from 'react';
 import PhotoListContainer from './containers/PhotoListContainer'
-import ApiCall from './containers/ApiCall';
 function App() {
   return (
     <div className="App">
@@ -8,7 +7,6 @@ function App() {
         react  
       </header>
         <PhotoListContainer />
-        <ApiCall />
     </div>
   );
 }

@@ -3,8 +3,8 @@ export const FETCH_DATA_SUCCESS = 'FETCH_DATA_SUCCESS';
 export const FETCH_DATA_FAILURE = 'FETCH_DATA_FAILURE';
 export const REFINE_DATA = 'REFINE_DATA';
 
-export const fetchData = () => {
-    const fetchUrl = `https://picsum.photos/v2/list?page=1&limit=25`;
+export const fetchData = (pageNumber) => {
+    const fetchUrl = `https://picsum.photos/v2/list?page=${pageNumber}&limit=25`;
     
     return (dispatch) => {
        dispatch(fetchDataBegin());
