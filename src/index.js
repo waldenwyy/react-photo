@@ -8,9 +8,6 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import './index.scss';
 
-
-// ReactDOM.render(<App />, document.getElementById('root'));
-
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
     rootReducer,
