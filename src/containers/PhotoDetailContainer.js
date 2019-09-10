@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import PhotoDetail from "../components/PhotoDetail";
 import { connect } from "react-redux";
-import { fetchData } from "../actions/photoActions";
 
 class PhotoDetailContainer extends Component {
 	render() {
@@ -31,6 +30,5 @@ const mapStatetoProps = state => {
 };
 
 export default connect(
-	mapStatetoProps,
-	{ fetchData }
+	mapStatetoProps
 )(PhotoDetailContainer);
