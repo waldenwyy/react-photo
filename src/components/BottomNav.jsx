@@ -7,7 +7,6 @@ export class BottomNav extends React.Component {
         const p = parseInt(this.props.pageNumber);
         const lastPage =  p - 1;
         const nextPage =  p + 1;
-        console.log(lastPage);
         return (
             <div className="bottom-navigation">
                 <div className="container">

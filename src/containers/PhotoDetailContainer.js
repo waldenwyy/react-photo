@@ -3,7 +3,11 @@ import PhotoDetail from '../components/PhotoDetail';
 import { connect } from 'react-redux';
 import { fetchData } from '../actions/photoActions';
 
+
 class PhotoDetailContainer extends Component {
+  state = {
+    selectedPhoto: undefined /* SelectedPhoto */
+  }
 
   render() {
     if (this.props.error) {

@@ -20,6 +20,14 @@ html {
     ul {
         list-style: none;
     }
+    .fa-plus-circle {
+        font-size: 4rem;
+        color: rgb(57, 206, 57);
+        cursor: pointer;
+        &:hover {
+            color: rgb(36, 104, 36);
+        }
+    }
 }
 .bottom-navigation {
     margin: 0 auto;
