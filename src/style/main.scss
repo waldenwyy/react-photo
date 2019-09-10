@@ -1,10 +1,19 @@
 @import 'bootstrap/scss/bootstrap.scss';
 @import '_default.scss';
 
+.Header-navigation {
+    background-color: rgb(223, 208, 208);
+    .shopping-cart {
+        position: absolute;
+        font-size: 5rem;
+        right: 2rem;
+        top: -1rem;
+        span {
+            font-size: 3rem;
+        }
+    }
+}
 
-html {
-    scroll-behavior: smooth;
-  }
 .photo-list {
     .row {
         .col {

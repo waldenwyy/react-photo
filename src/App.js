@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import PhotoListContainer from './containers/PhotoListContainer';
 import ShoppingCartContainer from './containers/ShoppingCartContainer';
 import PhotoDetailContainer from './containers/PhotoDetailContainer';
+import { Navigation } from './components/Navigation';
 // import ScrollToTop from './components/ScrollToTop';
 
 function PhotoListRoute(routeProps) {
@@ -20,8 +21,8 @@ function ShoppingCartRoute(routeProps) {
 function App() {
   return (
       <Router>
+        <Navigation />
         <div className="App">
-            {/* <ScrollToTop /> */}
             <Route exact path="/" component={PhotoListRoute} />
             <Route path="/page/:number" component={PhotoListRoute} />
             <Route path="/photo/:number" component={PhotoDetailRoute} />

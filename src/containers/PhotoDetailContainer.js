@@ -5,9 +5,6 @@ import { fetchData } from '../actions/photoActions';
 
 
 class PhotoDetailContainer extends Component {
-  state = {
-    selectedPhoto: undefined /* SelectedPhoto */
-  }
 
   render() {
     if (this.props.error) {
@@ -17,9 +14,7 @@ class PhotoDetailContainer extends Component {
     return (
       <div>
         { this.props.loading ? <p>Loading</p> : null }
-        <p>
-          Photo Shop
-        </p>
+        <h2 className="text-center py-5">Photo Details</h2>
        
         <PhotoDetail photo={this.props.photo.find( p => {
           return (

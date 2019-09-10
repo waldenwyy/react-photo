@@ -36,9 +36,7 @@ class PhotoListContainer extends Component {
     return (
       <div>
         { this.props.loading ? <p>Loading</p> : null }
-        <p>
-          Photo Shop
-        </p>
+        <h2 className="text-center py-5">Please Select Photo For Details</h2>
        
         <PhotoList photo={this.props.photo} />
         <BottomNav pageNumber={this.state.pageNumber}/>

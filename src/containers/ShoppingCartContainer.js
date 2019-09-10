@@ -17,9 +17,7 @@ class ShoppingCartContainer extends Component {
     return (
       <div>
         { this.props.loading ? <p>Loading</p> : null }
-        <p>
-          Shopping Cart
-        </p>
+        <h2 className="text-center py-5">Shopping Cart</h2>
        
       </div>
     );
