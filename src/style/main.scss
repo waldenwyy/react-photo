@@ -1,7 +1,7 @@
 @import 'bootstrap/scss/bootstrap.scss';
 @import '_default.scss';
 
-.Header-navigation {
+.header-navigation {
     background-color: rgb(223, 208, 208);
     .shopping-cart {
         position: absolute;
@@ -10,6 +10,9 @@
         top: -1rem;
         span {
             font-size: 3rem;
+        }
+        &:hover {
+            text-decoration: none;
         }
     }
 }

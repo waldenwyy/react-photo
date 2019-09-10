@@ -1,23 +1,40 @@
 import React, { Component } from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
-import SelectedPhoto from "../dataType/SelectedPhoto";
+import { connect } from "react-redux";
+import { addPhoto } from "../actions/cartActions";
 
 class PhotoDetail extends Component {
 	state = {
-    selectedSize:"",
-    selectedPrice:""
-  }
-  handleDropdown = (e, size, price) => {
-    e.preventDefault();
-    this.setState({
-      selectedSize:size,
-      selectedPrice:price
-    })
-  }
-  
-	render() {
+		selectedSize: undefined,
+		selectedPrice: undefined
+	};
 
+	handleDropdown = (e, size, price) => {
+		e.preventDefault();
+		this.setState({
+			selectedSize: size,
+			selectedPrice: price
+		});
+	};
+
+	addItem = e => {
+		e.preventDefault();
+
+		if (!this.state.selectedSize) {
+			alert("Please select size first")
+		} else {
+			const newProduct = {
+				...this.props.photo,
+				size: this.state.selectedSize,
+				price: this.state.selectedPrice
+			};
+	
+			this.props.addPhoto(newProduct);
+		}
+	};
+
+	render() {
 		if (!this.props.photo) {
 			return <div>No Photo Object in cache.</div>;
 		}
@@ -35,7 +52,7 @@ class PhotoDetail extends Component {
 						<ul>
 							<li>
 								<p className="font-weight-bold">
-									Photo ID:{" "}
+									Photo ID:
 									<span className="font-weight-normal">
 										{this.props.photo.id}
 									</span>
@@ -43,7 +60,7 @@ class PhotoDetail extends Component {
 							</li>
 							<li>
 								<p className="font-weight-bold">
-									Author:{" "}
+									Author:
 									<span className="font-weight-normal">
 										{this.props.photo.author}
 									</span>
@@ -51,7 +68,7 @@ class PhotoDetail extends Component {
 							</li>
 							<li>
 								<p className="font-weight-bold">
-									Width:{" "}
+									Width:
 									<span className="font-weight-normal">
 										{this.props.photo.width}
 									</span>
@@ -59,7 +76,7 @@ class PhotoDetail extends Component {
 							</li>
 							<li>
 								<p className="font-weight-bold">
-									Height:{" "}
+									Height:
 									<span className="font-weight-normal">
 										{this.props.photo.height}
 									</span>
@@ -67,7 +84,7 @@ class PhotoDetail extends Component {
 							</li>
 							<li>
 								<p className="font-weight-bold">
-									URL:{" "}
+									URL:
 									<span className="font-weight-normal">
 										{this.props.photo.url}
 									</span>
@@ -75,7 +92,7 @@ class PhotoDetail extends Component {
 							</li>
 							<li>
 								<p className="font-weight-bold">
-									Download URL:{" "}
+									Download URL:
 									<span className="font-weight-normal">
 										{this.props.photo.download_url}
 									</span>
@@ -83,7 +100,7 @@ class PhotoDetail extends Component {
 							</li>
 							<li>
 								<p className="font-weight-bold d-inline-block pr-4">
-									Size:{" "}
+									Size:
 								</p>
 								<DropdownButton
 									id="dropdown-basic-button"
@@ -96,35 +113,51 @@ class PhotoDetail extends Component {
 								>
 									<Dropdown.Item
 										href="/"
-										onClick={ e=> this.handleDropdown(
-											e, "Small", "10"
-										)}
+										onClick={e =>
+											this.handleDropdown(
+												e,
+												"Small",
+												10
+											)
+										}
 									>
-										{SelectedPhoto.ATTR_SM.text}
+										Small
 									</Dropdown.Item>
 									<Dropdown.Item
 										href="/"
-										onClick={ e=> this.handleDropdown(
-											e, "Medium", "20"
-										)}
+										onClick={e =>
+											this.handleDropdown(
+												e,
+												"Medium",
+												20
+											)
+										}
 									>
-										{SelectedPhoto.ATTR_MD.text}
+										Medium
 									</Dropdown.Item>
 									<Dropdown.Item
 										href="/"
-										onClick={ e=> this.handleDropdown(
-											e, "Large", "50"
-										)}
+										onClick={e =>
+											this.handleDropdown(
+												e,
+												"Large",
+												50
+											)
+										}
 									>
-										{SelectedPhoto.ATTR_LG.text}
+										Large
 									</Dropdown.Item>
 									<Dropdown.Item
 										href="/"
-										onClick={ e=> this.handleDropdown(
-											e, "X-large", "100"
-										)}
+										onClick={e =>
+											this.handleDropdown(
+												e,
+												"X-large",
+												100
+											)
+										}
 									>
-										{SelectedPhoto.ATTR_XL.text}
+										X-Large
 									</Dropdown.Item>
 								</DropdownButton>
 							</li>
@@ -134,7 +167,7 @@ class PhotoDetail extends Component {
 									<span className="font-weight-normal">
 										{this.state.selectedPrice
 											? this.state.selectedPrice
-											: "0"}
+											: 0}
 									</span>
 								</p>
 							</li>
@@ -142,6 +175,10 @@ class PhotoDetail extends Component {
 								<i
 									className="fa fa-plus-circle"
 									aria-hidden="true"
+									onClick={
+										
+										this.addItem
+									}
 								></i>
 							</li>
 						</ul>
@@ -152,4 +189,4 @@ class PhotoDetail extends Component {
 	}
 }
 
-export default PhotoDetail;
+export default connect(null, { addPhoto })(PhotoDetail);
