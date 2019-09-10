@@ -20,15 +20,15 @@ function ShoppingCartRoute(routeProps) {
 
 function App() {
   return (
-      <Router>
-        <Navigation />
-        <div className="App">
-            <Route exact path="/" component={PhotoListRoute} />
-            <Route path="/page/:number" component={PhotoListRoute} />
-            <Route path="/photo/:number" component={PhotoDetailRoute} />
-            <Route exact path="/cart" component={ShoppingCartRoute} />
-        </div>
-      </Router>
+	  <Router>
+		<Navigation />
+		<div className="App">
+			<Route exact path="/" component={PhotoListRoute} />
+			<Route path="/page/:number" component={PhotoListRoute} />
+			<Route path="/photo/:number" component={PhotoDetailRoute} />
+			<Route exact path="/cart" component={ShoppingCartRoute} />
+		</div>
+	  </Router>
   );
 }
 

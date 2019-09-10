@@ -1,7 +1,7 @@
-import React from "react";
+import React, {Component} from "react";
 import { NavLink } from "react-router-dom";
 
-export class BottomNav extends React.Component {
+export class BottomNav extends Component {
 
     render() {
         const p = parseInt(this.props.pageNumber);
